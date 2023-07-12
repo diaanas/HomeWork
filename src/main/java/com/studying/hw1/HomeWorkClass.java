@@ -2,32 +2,35 @@ package com.studying.hw1;
 
 public class HomeWorkClass {
     public int getPrimitiveFive() {
-        int five = -10;
+        int five = 5;
         return five;
     }
 
     public Integer getMinInteger() {
-        return null;
+        return Integer.MIN_VALUE;
     }
 
     public Integer getMaxInteger() {
-        return null;
+        return Integer.MAX_VALUE;
     }
 
     public Long getMinLong() {
-        return null;
+        return Long.MIN_VALUE;
     }
 
     public Long getMaxLong() {
-        return null;
+        return Long.MAX_VALUE;
     }
-
     public String writeToString() {
-       return "";
+        StringBuilder word = new StringBuilder();
+        for(int i = 1; i<= 10; i++){
+            word.append(i);
+        }
+       return word.toString();
     }
 
     public boolean checkForNegativeValue(int number) {
-        return false;
+        return number < 0;
 
     }
 
@@ -35,14 +38,42 @@ public class HomeWorkClass {
         if (weekday == null) {
             return -1;
         }
-        return 0;
+        switch (weekday){
+            case MONDAY:
+                return 1;
+            case TUESDAY:
+                return 2;
+            case WEDNESDAY:
+                return 3;
+            case THURSDAY:
+                return 4;
+            case FRIDAY:
+                return 5;
+            case SATURDAY:
+                return 6;
+            case SUNDAY:
+                return 7;
+
+        }
+        return -1;
     }
 
     public int getFactorial(int val) {
-        return 0;
+        if (val < 0) {
+            return -1;
+        } else if (val == 0) {
+            return 1;
+        } else {
+            int result = 1;
+            while (val != 0) {
+                result *= val;
+                val -= 1;
+            }
+            return result;
+        }
     }
 
     public int findMaxValue(int a, int b) {
-        return 0;
+        return Integer.max(a,b);
     }
 }
